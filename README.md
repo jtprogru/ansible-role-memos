@@ -2,9 +2,8 @@
 
 [![Ansible Molecule](https://github.com/jtprogru/ansible-role-memos/actions/workflows/molecule.yml/badge.svg)](https://github.com/jtprogru/ansible-role-memos/actions/workflows/molecule.yml)
 [![Release to Ansible Galaxy](https://github.com/jtprogru/ansible-role-memos/actions/workflows/galaxy.yml/badge.svg)](https://github.com/jtprogru/ansible-role-memos/actions/workflows/galaxy.yml)
-[![TODO 2 Issue](https://github.com/jtprogru/ansible-role-memos/actions/workflows/todo.yml/badge.svg)](https://github.com/jtprogru/ansible-role-memos/actions/workflows/todo.yml)
 ![GitHub](https://img.shields.io/github/license/jtprogru/ansible-role-memos)
-[![Ansible Role](https://img.shields.io/ansible/role/54362)](https://galaxy.ansible.com/jtprogru/ansible-role-memos/)
+[![Ansible Role](https://img.shields.io/ansible/role/62618)](https://galaxy.ansible.com/jtprogru/memos/)
 [![GitHub tag](https://img.shields.io/github/tag/jtprogru/ansible-role-memos.svg)](https://github.com/jtprogru/ansible-role-memos/tags)
 
 Simple ansible role for running dockerized [memos](https://usememos.com)
