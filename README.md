@@ -1,6 +1,5 @@
 # jtprogru.memos
 
-[![Ansible Molecule](https://github.com/jtprogru/ansible-role-memos/actions/workflows/molecule.yml/badge.svg)](https://github.com/jtprogru/ansible-role-memos/actions/workflows/molecule.yml)
 [![Release to Ansible Galaxy](https://github.com/jtprogru/ansible-role-memos/actions/workflows/galaxy.yml/badge.svg)](https://github.com/jtprogru/ansible-role-memos/actions/workflows/galaxy.yml)
 ![GitHub](https://img.shields.io/github/license/jtprogru/ansible-role-memos)
 [![Ansible Role](https://img.shields.io/ansible/role/62618)](https://galaxy.ansible.com/jtprogru/memos/)
