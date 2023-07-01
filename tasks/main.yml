@@ -1,0 +1,11 @@
+---
+- name: Start memos project with inline definition
+  community.docker.docker_compose:
+    project_name: memos
+    definition: "{{ __memos_docker_compose }}"
+  register: output
+
+- name: Verify that the db and web services are running
+  ansible.builtin.assert:
+    that:
+      - "output.services.app.memos.state.running"

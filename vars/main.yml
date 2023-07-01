@@ -1,0 +1,11 @@
+---
+__memos_docker_compose:
+  version: "3.0"
+  services:
+    app:
+      image: "neosmemo/memos:{{ memos_version }}"
+      container_name: memos
+      volumes:
+        - "{{ memos_volume_path }}/:/var/opt/memos"
+      ports:
+        - 5230:5230

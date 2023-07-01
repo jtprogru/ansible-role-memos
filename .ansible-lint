@@ -1,0 +1,20 @@
+---
+profile: production
+
+exclude_paths:
+  - .github/
+  - molecule/
+  - venv/
+
+parseable: true
+quiet: false
+
+skip_list:
+  - "401"
+  - "204"
+  - "403"
+  - "702"
+  - "305"
+
+use_default_rules: true
+verbosity: 3
