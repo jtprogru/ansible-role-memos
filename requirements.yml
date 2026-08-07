@@ -1,0 +1,8 @@
+---
+collections:
+  # docker_compose_v2 needs >= 3.6.0, the wait option needs >= 3.8.0
+  - name: community.docker
+    version: ">=3.8.0"
+
+roles:
+  - name: geerlingguy.docker

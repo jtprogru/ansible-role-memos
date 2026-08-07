@@ -1,6 +1,5 @@
 ---
 __memos_docker_compose:
-  version: "3.0"
   services:
     app:
       image: "neosmemo/memos:{{ memos_version }}"

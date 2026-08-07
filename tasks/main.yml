@@ -1,11 +1,19 @@
 ---
 - name: Start memos project with inline definition
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     project_name: memos
     definition: "{{ __memos_docker_compose }}"
+    state: present
+    wait: true
   register: output
 
-- name: Verify that the db and web services are running
+- name: Verify that the memos service is running
   ansible.builtin.assert:
     that:
-      - "output.services.app.memos.state.running"
+      - >-
+        output.containers
+        | selectattr('Service', 'equalto', 'app')
+        | selectattr('State', 'equalto', 'running')
+        | list | length > 0
+    fail_msg: "The memos container is not in the running state"
+    success_msg: "The memos container is running"
