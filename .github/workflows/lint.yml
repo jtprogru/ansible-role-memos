@@ -1,0 +1,29 @@
+---
+name: Lint
+
+"on":
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v7
+
+      - name: Set up uv.
+        uses: astral-sh/setup-uv@v9
+        with:
+          enable-cache: true
+
+      - name: Install dependencies.
+        run: uv sync --frozen
+
+      - name: Run yamllint.
+        run: uv run yamllint --format github --strict .
+
+      - name: Run ansible-lint.
+        run: uv run ansible-lint .
