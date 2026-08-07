@@ -1,4 +1,4 @@
-ansible-core==2.15.9
+ansible-core==2.16.19rc1
 ansible==8.5.0
 ansible-lint==6.17.2
 black==24.3.0
