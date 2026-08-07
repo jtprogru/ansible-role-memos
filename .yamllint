@@ -5,6 +5,8 @@ ignore: |
   .github/*
   molecule/*
   venv/*
+  .venv/*
+  .ansible/*
 
 extends: default
 
@@ -21,7 +23,8 @@ rules:
   commas:
     max-spaces-after: -1
     level: error
-  comments: disable
+  comments:
+    min-spaces-from-content: 1
   comments-indentation: disable
   document-start: disable
   empty-lines:
@@ -40,3 +43,6 @@ rules:
     type: unix
   trailing-spaces: enable
   truthy: enable
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true

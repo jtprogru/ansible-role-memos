@@ -5,8 +5,8 @@ exclude_paths:
   - .github/
   - molecule/
   - venv/
+  - .venv/
 
-parseable: true
 quiet: false
 
 skip_list:

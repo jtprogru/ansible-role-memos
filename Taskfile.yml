@@ -14,41 +14,36 @@ tasks:
     cmds:
       - task --list --color
 
-  venv:
-    desc: Create python3 virtual environment
+  sync:
+    desc: Sync python environment from uv.lock
     preconditions:
-      - test -f $(which python3)
+      - sh: command -v uv
+        msg: "uv is not installed, see https://docs.astral.sh/uv/getting-started/installation/"
+      - test -f uv.lock
     cmds:
-      - $(which python3) -m venv venv
-      - ./venv/bin/python -m pip install --upgrade pip
+      - uv sync
 
-  install:pip:
-    desc: Install python requirements
-    deps:
-      - venv
+  lock:
+    desc: Refresh uv.lock with the latest allowed versions
     preconditions:
-      - test -d ./venv
-      - test -f requirements.txt
+      - sh: command -v uv
+        msg: "uv is not installed, see https://docs.astral.sh/uv/getting-started/installation/"
     cmds:
-      - ./venv/bin/pip install -r requirements.txt
+      - uv lock --upgrade
 
   anslint:
     desc: Run ansible-lint
     deps:
-      - install:pip
-    preconditions:
-      - test -f ./venv/bin/ansible-lint
+      - sync
     cmds:
-      - ./venv/bin/ansible-lint --force-color .
+      - uv run ansible-lint --force-color .
 
   ymllint:
     desc: Run yamllint
     deps:
-      - install:pip
-    preconditions:
-      - test -f ./venv/bin/yamllint
+      - sync
     cmds:
-      - ./venv/bin/yamllint --format auto --strict .
+      - uv run yamllint --format auto --strict .
 
   lint:
     desc: Run all linters

@@ -1,3 +1,10 @@
 .idea/
 .vscode/
 
+# ansible-lint / ansible-compat cache
+.ansible/
+
+# python
+venv/
+.venv/
+__pycache__/
