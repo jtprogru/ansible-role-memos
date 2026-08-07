@@ -29,6 +29,22 @@ Example playbook:
     - jtprogru.memos
 ```
 
+## Requirements
+
+Docker with the Compose CLI plugin v2 on the target host, `community.docker` collection `>= 3.8.0` on the controller. See [`requirements.yml`](requirements.yml).
+
+## Development
+
+Python dependencies are managed with [uv](https://docs.astral.sh/uv/). The pinned set lives in `pyproject.toml` and `uv.lock`, the interpreter version in `.python-version`.
+
+```bash
+uv sync                 # create .venv from uv.lock
+uv run ansible-lint .   # or: task anslint
+task lint               # yamllint + ansible-lint
+```
+
+To bump the pinned versions run `uv lock --upgrade` (or `task lock`) and commit the updated `uv.lock`.
+
 ## Authors
 
 - Michael Savin
